@@ -5,7 +5,17 @@ export default {
   data() {
     return {
       cities : ['Annecy' , 'Paris' , 'Lyon' , 'Grenoble'],
-      showCities: true
+      showCities: true,
+      newCity: ''
+    }
+  },
+  
+  methods: {
+    addCity() {
+      if (this.newCity.trim() !== ''){
+        this.cities.push(this.newCity)
+        this.newCity = ''
+      }
     }
   }
 }
@@ -14,7 +24,21 @@ export default {
 <template>
   <h1>Ma premiere application meteo</h1>
   
-  <button @click = "showCities = !showCities">
+  <input 
+    v-model="newCity"
+    type="text"
+    placeholder="Ajouter une ville"
+  >  
+
+  <button v-bind:disabled="newCity.trim() === '' "
+    @click="addCity">
+    Ajouter
+  </button>
+
+  <button 
+    v-bind:title="showCities ? 'Masquer les villes' : 'Afficher les villes' " 
+    @click = "showCities = !showCities"
+  >
   Afficher / masquer les villes
   </button>
 
