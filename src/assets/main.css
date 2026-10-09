@@ -33,3 +33,28 @@ a,
     padding: 0 2rem;
   }
 }
+
+/* Set the global page layout and colors. */
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #183b56;
+  background: #f1f7fc;
+}
+
+body {
+  display: block;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f1f7fc;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
